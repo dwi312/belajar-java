@@ -1,0 +1,91 @@
+Sintaksis dasar dalam Java mengacu pada aturan-aturan yang mengatur cara
+penulisan kode agar dapat diterima dan dipahami oleh compiler Java.
+Berikut adalah beberapa komponen utama dari sintaksis dasar dalam Java:
+
+1. Deklarasi Kelas (Class Declaration)
+    Semua program Java harus berada dalam sebuah kelas.
+    Format dasar untuk mendeklarasikan kelas adalah sebagai berikut:
+
+            public class NamaKelas {
+            // deklarasi variabel dan metode
+        }
+
+2. Metode main
+    Program Java dimulai eksekusinya dari metode main.
+    Berikut adalah contoh deklarasi metode main:
+
+            public static void main(String[] args) {
+            // kode yang akan dijalankan
+        }
+
+3. Variabel
+    Variabel digunakan untuk menyimpan data. Deklarasi variabel terdiri
+    dari tipe data dan nama variabel.
+
+            int angka = 10;  // deklarasi variabel dengan tipe data int
+            String nama = "Java";  // deklarasi variabel dengan tipe data String
+
+4. Tipe Data
+    Java memiliki berbagai tipe data, baik primitif maupun objek. Beberapa tipe
+    data dasar yang sering digunakan adalah:
+       * int (bilangan bulat)
+       * double (bilangan pecahan)
+       * boolean (true/false)
+       * char (karakter tunggal)
+       * String (teks)
+
+5. Operator
+    Java menggunakan berbagai jenis operator, seperti operator aritmatika, logika,
+    dan perbandingan. Contoh operator aritmatika:
+
+        int a = 5;
+        int b = 3;
+        int c = a + b;  // penjumlahan
+        int d = a - b;  // pengurangan
+
+6. Struktur Kontrol
+    a. Percabangan (if, else)
+    
+            if (x > 10) {
+                System.out.println("x lebih besar dari 10");
+            } else {
+                System.out.println("x kurang dari atau sama dengan 10");
+            }
+    b. Perulangan (for, while)
+            // Perulangan for
+            for (int i = 0; i < 5; i++) {
+                System.out.println(i);
+            }
+
+            // Perulangan while
+            int j = 0;
+            while (j < 5) {
+                System.out.println(j);
+                j++;
+            }
+
+7. Komentar
+    Komentar digunakan untuk menambahkan penjelasan dalam kode, yang tidak akan
+    diproses oleh compiler. Ada dua jenis komentar:
+
+    a. Komentar satu baris
+        // Ini adalah komentar satu baris
+
+    b. Komentar multi-baris:
+        /*
+             Ini adalah komentar multi-baris
+            yang dapat digunakan untuk menjelaskan lebih banyak
+        */
+
+8. Penggunaan System.out.println()
+    Untuk menampilkan output ke konsol, kita menggunakan System.out.println().
+    Misalnya:
+
+        System.out.println("Hello, World!");  // Menampilkan teks ke layar
+
+9. Penggunaan return
+    Kata kunci return digunakan untuk mengembalikan nilai dari metode.
+
+        public int tambah(int a, int b) {
+            return a + b;
+        }
