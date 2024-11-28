@@ -49,7 +49,7 @@ public class Dasar {
         boolean samaDengan = (a == b);
 
         System.out.println("===========================================");
-        System.out.println("3. Input/Output program java");
+        System.out.println("4. Input/Output program java");
 
         // Input dari keyboard
         Scanner scanner = new Scanner(System.in);
@@ -65,8 +65,53 @@ public class Dasar {
         // Output
         System.out.println("Nama: " + nama);
         System.out.println("Umur: " + usia);
+
+        System.out.println("===========================================");
+        System.out.println("5. Percabangan program java");
         
-        scanner.close();
+        System.out.println("pilih no");
+        System.out.println("1. Satu");
+        System.out.println("2. Dua");
+        System.out.println("3. Tiga");
+        System.out.println("\n");
+
+        int pilih = scanner.nextInt();
+
+
+        // If-Else
+        if(pilih == 1) {
+            System.out.println("Anda memilih No. " + pilih);
+        } else if (pilih == 2) {
+            System.out.println("Anda memilih No. " + pilih);
+        } else if (pilih == 3) {
+            System.out.println("Anda memilih No. " + pilih);
+        } else {
+            System.out.println("No. " + pilih + " yang anda pilih tidak dapat ditemukan!");
+        }
+
+        System.out.println("pilih Opsi ");
+        System.out.println("1. Kesatu");
+        System.out.println("2. Kedua");
+        System.out.println("3. Ketiga");
+        System.out.println("\n");
+        int opsi = scanner.nextInt();
+
+        // Switch Case
+        switch (opsi) {
+            case 1:
+                System.out.println("Anda memilih opsi " + opsi);
+                break;
+            case 2:
+                System.out.println("Anda memilih opsi " + opsi);
+                break;
+            case 3:
+                System.out.println("Anda memilih opsi " + opsi);
+                break;
+                
+                default:
+                System.out.println("opsi " + opsi + " yang anda pilih tidak dapat ditemukan!");
+                break;
+        }
     }
 
 }
