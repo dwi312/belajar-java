@@ -112,6 +112,66 @@ public class Dasar {
                 System.out.println("opsi " + opsi + " yang anda pilih tidak dapat ditemukan!");
                 break;
         }
+
+        System.out.println("===========================================");
+        System.out.println("6. Perulangan program java");
+
+        // For Loop
+        System.out.println("Putar berapa kali ? ");
+        System.out.println("\n");
+
+        int putar = scanner.nextInt();
+        
+        if (putar == 0 || putar >= 20) {
+            System.out.println("Pilihan yang anda pilih tidak ada!");
+        } else {
+            for(int i = 0; i < putar; i++) {
+                System.out.println("Anda memilih " + (i+1) + " kali putaran!");
+            }
+        }
+
+        // Do-While Loop
+        boolean exit = false;
+        do {
+            System.out.println("Pilih menu ");
+            System.out.println("1. Makanan");
+            System.out.println("2. Minuman");
+            System.out.println("3. Snack");
+            System.out.println("4. Keluar");
+            System.out.println("\n");
+
+            int menu = scanner.nextInt();
+            switch (menu) {
+                case 1:
+                    System.out.println("===================");
+                    System.out.println("Daftar list makanan");
+                    System.out.println("===================");
+                    System.out.println("\n");
+                    break;
+                case 2:
+                    System.out.println("===================");
+                    System.out.println("Daftar list minuman");
+                    System.out.println("===================");
+                    System.out.println("\n");
+                    break;
+                case 3:
+                    System.out.println("===================");
+                    System.out.println("Daftar list snack");
+                    System.out.println("===================");
+                    System.out.println("\n");
+                    break;
+                case 4:
+                    System.out.println("Terimakasih");
+                    System.out.println("\n");
+                    exit = true;
+                    break;
+                    
+                default:
+                    System.out.println("Pilihan yang anda masukan tidak ada!");
+                    break;
+            }
+            
+        } while (!exit);
     }
 
 }
