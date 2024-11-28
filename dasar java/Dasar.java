@@ -2,6 +2,8 @@ public class Dasar {
     public static void main(String[] args) {
         System.out.println("1. membuat struktur dasar program java");
 
+        System.out.println("===========================================");
+
         System.out.println("2. membuat Deklarasi Variabel program java");
 
         // Tipe Data Primitif
@@ -26,6 +28,23 @@ public class Dasar {
 
         System.out.println("berapa usia budi sekarang ? jawaban " + umur);
         System.out.println("rumus lingkaran adalah  " + PI);
+
+
+        System.out.println("===========================================");
+        System.out.println("3. Operator Dasar program java");
+
+
+        // Operator Aritmatika
+        int a = 10, b = 5;
+        int tambah = a + b;     // Penjumlahan
+        int kurang = a - b;     // Pengurangan
+        int kali = a * b;       // Perkalian
+        int bagi = a / b;       // Pembagian
+        int modulus = a % b;    // Sisa pembagian
+
+        // Operator Perbandingan
+        boolean lebihBesar = (a > b);
+        boolean samaDengan = (a == b);
     }
 
 }
