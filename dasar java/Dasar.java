@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Dasar {
     public static void main(String[] args) {
         System.out.println("1. membuat struktur dasar program java");
@@ -45,6 +47,26 @@ public class Dasar {
         // Operator Perbandingan
         boolean lebihBesar = (a > b);
         boolean samaDengan = (a == b);
+
+        System.out.println("===========================================");
+        System.out.println("3. Input/Output program java");
+
+        // Input dari keyboard
+        Scanner scanner = new Scanner(System.in);
+
+        // Input teks
+        System.out.print("Masukkan nama: ");
+        String nama = scanner.nextLine();
+
+        // Input angka
+        System.out.print("Masukkan umur: ");
+        int usia = scanner.nextInt();
+
+        // Output
+        System.out.println("Nama: " + nama);
+        System.out.println("Umur: " + usia);
+        
+        scanner.close();
     }
 
 }
