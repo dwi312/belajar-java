@@ -172,6 +172,81 @@ public class Dasar {
             }
             
         } while (!exit);
+
+        System.out.println("===========================================");
+        System.out.println("7. Fungsi/Method program java");
+        System.out.println("\n");
+        
+        System.out.println("---------------------------------------------");
+        System.out.println("Pemanggilan Fungsi tanpa parameter dan return");
+        System.out.println("\n");
+        System.out.println("\n");
+        System.out.println("Menampilkan pesan Ketik y/n");
+        Scanner inStr = new Scanner(System.in);
+        String pesan = inStr.nextLine();
+        
+
+        // Pemanggilan Fungsi tanpa parameter dan return
+        /** Mengapa Tidak Bisa Langsung Dipanggil?
+            tampilkanPesan() adalah metode non-statis (instance method)
+            Metode non-statis membutuhkan objek untuk dipanggil
+            Tidak bisa dipanggil langsung di metode statis main()
+        **/
+        if (pesan.equalsIgnoreCase("y")) {
+            // Membuat objek
+            Dasar object = new Dasar();
+            // Memanggil metode melalui objek
+            object.tampilkanPesan();
+        } else {
+            System.out.println("tidak");
+        }
+
+        inStr.close();
+        System.out.println("---------------------------------------------");
+        System.out.println("---------------------------------------------");
+        System.out.println("Pemanggilan Fungsi dengan parameter");
+        System.out.println("\n");
+        System.out.println("\n");
+        Scanner inInt = new Scanner(System.in);
+
+        System.out.println("Nila A = ");
+        String numA = inInt.nextLine();
+      
+        System.out.println("Nila B = ");
+        String numB = inInt.nextLine();
+        
+
+
+        if (isValidNumber(numA) || isValidNumber(numB)) {
+            int numberA = Integer.parseInt(numA);
+            int numberb = Integer.parseInt(numB);
+            Dasar jumlah = new Dasar();
+            int total = jumlah.tambah(numberA, numberb); 
+            System.out.println("Jumlah Nila A + Nilai B  = " + total);
+        }
+        inInt.close();
+
+        
+    }
+
+    // Menggunakan ekspresi reguler untuk memastikan bahwa input tidak kosong dan hanya berisi angka
+    public static boolean isValidNumber(String inInt) {
+        return inInt != null && !inInt.trim().isEmpty() && inInt.matches("\\d+");
+    }
+
+    // Fungsi tanpa parameter dan return 
+    public void tampilkanPesan() {
+        System.out.println("Halo!");
+    }
+
+    // Fungsi dengan parameter
+    public int tambah(int a, int b) {
+        return a + b;
+    }
+
+    // Fungsi dengan tipe data kembalian
+    public String gabungkan(String depan, String belakang) {
+        return depan + " " + belakang;
     }
 
 }
