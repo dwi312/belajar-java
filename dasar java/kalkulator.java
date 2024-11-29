@@ -15,10 +15,9 @@ public class kalkulator {
             System.out.println("KALKULATOR");
             System.out.println("========================");
 
-            System.out.println("Masukan angka pertama");
-            num1 = input.nextDouble();
-            System.out.println("Masukan angka kedua");
-            num2 = input.nextDouble();
+            num1 = validasiAngka(input, "Masukan angka pertama");
+
+            num2 = validasiAngka(input, "Masukan angka kedua");
 
             System.out.println("========================");
                 System.out.println("Pilih operasi : ");
@@ -27,33 +26,42 @@ public class kalkulator {
                 System.out.println("3. Kali");
                 System.out.println("4. Bagi");
                 System.out.println("5. Keluar");
-                System.out.println("Masukan piihan anda (1~4)");
+                System.out.println();
+                
+                int pilih = 0;
+                pilih = validasiPilihan(input,"Masukan piihan anda (1~4)");
                 System.out.println("========================");
-                
-                int pilih = input.nextInt();
-                
+                System.out.println("\n");
+
+
                 double hasil = 0;
+                String oper;
+
 
                 switch (pilih) {
                     case 1:
+                        oper = "+";
                         hasil = tambah(num1, num2);
-                        System.out.println(num1 + " + " + num2 + " = " + hasil);
+                        cetak(num1,oper, num2, hasil);
                         break;
                     case 2:
+                        oper = "-";
                         hasil = kurang(num1, num2);
-                        System.out.println(num1 + " - " + num2 + " = " + hasil);
+                        cetak(num1,oper, num2, hasil);
                         break;
                     case 3:
+                        oper = "x";    
                         hasil = kali(num1, num2);
-                        System.out.println(num1 + " x " + num2 + " = " + hasil);
+                        cetak(num1,oper, num2, hasil);    
                         break;
                     case 4:
+                        oper = "/";
                         hasil = bagi(num1, num2);
-                        System.out.println(num1 + " : " + num2 + " = " + hasil);
+                        cetak(num1,oper, num2, hasil);
                         break;
                     case 5:
-                        exit = true;
                         System.out.println("Terimakasih");
+                        exit = true;
                         break;
                 
                     default:
@@ -73,8 +81,46 @@ public class kalkulator {
             
         } while (!exit);
         
+    }
 
+    private static double validasiAngka(Scanner input, String prompt) {
+        double angka = 0;
+        boolean valid = false;
 
+        do {
+            System.out.println(prompt);
+            try {
+                angka = input.nextDouble();
+                valid = true;
+            } catch (InputMismatchException e) {
+                System.out.println("yang anda masukan bukan angka!");
+                input.next();
+            }
+            
+        } while (!valid);
+        return angka;
+    }
+
+    private static int validasiPilihan(Scanner input, String prompt) {
+        int angka = 0;
+        boolean valid = false;
+
+        do {
+            System.out.println(prompt);
+            try {
+                angka = input.nextInt();
+                valid = true;
+            } catch (InputMismatchException e) {
+                System.out.println("yang anda masukan bukan angka!");
+                input.next();
+            }
+            
+        } while (!valid);
+        return angka;
+    }
+
+    private static void cetak(double a, String o, double b, double c) {
+        System.out.println(a + " " + o + " " + b + " = " + c);
     }
 
     private static double tambah(double a, double b) {
@@ -90,6 +136,10 @@ public class kalkulator {
     }
 
     private static double bagi(double a, double b) {
+        if(b == 0) {
+            System.out.println("Pembagian tidak boleh angka 0");
+            return 0;
+        }
         return a / b;
     }
 
