@@ -60,6 +60,7 @@ public class Pola {
                     break;
             
                 default:
+                    System.out.println("Pilihan tidak valid");
                     break;
             }
             backToMenu(num, exit);
