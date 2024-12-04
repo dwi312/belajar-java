@@ -30,7 +30,7 @@ public class Pola {
                     segitaSiku();
                     break;
                 case 2:
-                    // angkaNaik();
+                    angkaNaik();
                     break;
                 case 3:
                 // piramida terbalik();
@@ -90,6 +90,7 @@ public class Pola {
             System.out.println((i+1)+". "+menu[i]);
         }
     }
+
     private static void backToMenu(int num , boolean exit) {
         if (num != 10) {
             System.out.println("Kembali ke menu ? y / n");
@@ -117,6 +118,21 @@ public class Pola {
         for(int i = 1; i <= tinggi; i++) {
             for(int j = 1; j <= i; j++) {
                 System.out.print("* ");
+            }
+            System.out.println("");
+        }
+        System.out.println("");
+    }
+
+    private static void angkaNaik() {
+        System.out.println("mencetak pola segitiga siku-siku");
+        System.out.print("Masukan tinggi line: ");
+        int tinggi = input.nextInt();
+
+        System.out.println("");
+        for(int i = 1; i <= tinggi; i++) {
+            for(int j = 1; j <= i; j++) {
+                System.out.print(j);
             }
             System.out.println("");
         }
