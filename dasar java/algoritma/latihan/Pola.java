@@ -39,7 +39,7 @@ public class Pola {
                     berlianBintang();
                     break;
                 case 5:
-                    // segitigaPalindrom();
+                    segitigaPalindrom();
                     break;
                 case 6:
                     // butterfly();
@@ -208,5 +208,25 @@ public class Pola {
         }
 
         System.out.println("");
+    }
+
+    private static void segitigaPalindrom() {
+        System.out.println("mencetak pola segitiga palindrom");
+        System.out.print("Masukan tinggi line: ");
+        int tinggi = input.nextInt();
+
+        System.out.println("");
+        for(int i = 1; i <= tinggi; i++) {
+            for(int j = 1; j <= tinggi-i; j++) {
+                System.out.print(" ");
+            }
+            for(int k = 1; k <= i ; k++) {
+                System.out.print(i);
+            }
+            System.out.println("");
+        }
+
+        System.out.println("");
+
     }
 }
