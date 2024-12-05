@@ -17,9 +17,9 @@ import java.util.Scanner;
 
 public class Pola {
     private static Scanner input = new Scanner(System.in);
+    private static boolean exit = false;
     public static void main(String[] args) {
-        boolean exit = false;
-
+        
         do {
             tampilkanMenu();
             System.out.print("Pilih menu: ");
@@ -36,7 +36,7 @@ public class Pola {
                     piramidTerbalik();
                     break;
                 case 4:
-                    // berlianBintang();
+                    berlianBintang();
                     break;
                 case 5:
                     // segitigaPalindrom();
@@ -63,7 +63,7 @@ public class Pola {
                     System.out.println("Pilihan tidak valid");
                     break;
             }
-            backToMenu(num, exit);
+           exit = backToMenu(num, exit);
             
         } while (!exit);
 
@@ -91,7 +91,7 @@ public class Pola {
         }
     }
 
-    private static void backToMenu(int num , boolean exit) {
+    private static boolean backToMenu(int num , boolean exit) {
         if (num != 10) {
             System.out.println("Kembali ke menu ? y / n");
             String backMenu = input.next();
@@ -104,11 +104,13 @@ public class Pola {
             if (backMenu.equalsIgnoreCase("n")) {
                 System.out.println("Keluar dari program");
                 System.out.println("Terimakasih");
-                exit = true;
+                return true;
             }
         }
 
+        return false;
     }
+
     private static void segitaSiku() {
         System.out.println("mencetak pola segitiga siku-siku");
         System.out.print("Masukan tinggi line: ");
@@ -140,7 +142,7 @@ public class Pola {
     }
 
     private static void piramidTerbalik() {
-        System.out.println("mencetak pola segitiga siku-siku");
+        System.out.println("mencetak pola piramida terbalik");
         System.out.print("Masukan tinggi line: ");
         int tinggi = input.nextInt();
 
@@ -161,6 +163,50 @@ public class Pola {
             }
             System.out.println("");
         }
+
+        System.out.println("");
+    }
+
+    private static void berlianBintang() {
+        System.out.println("mencetak pola berlian bintang");
+        System.out.print("Masukan tinggi line: ");
+        int tinggi = input.nextInt();
+
+        System.out.println("");
+        
+        for(int i = 1; i <= tinggi; i++) {
+            // sepasi
+            for(int j = 1; j <= tinggi - i; j++ ) {
+                System.out.print(" ");
+                // output:
+                // loop 1 = j(1) < (5-1) = 4 => true => ____
+                // loop 2 = j(1) > (5-2) = 3 => true => ___  
+            }
+
+            // bintang
+            for(int k = 1; k <= 2 * i -1; k++) {
+                System.out.print("*");
+                // output:
+                // loop 1 = k(1) < 2*1-1 = 1 => true => *
+
+            }
+            System.out.println("");
+
+        }
+
+        for(int i = tinggi-1; i >= 1; i--) {
+            for(int j = 1; j <= tinggi - i; j++) {
+                System.out.print(" ");
+    
+            }
+
+            for(int k = 1; k <= 2 * i -1; k++) {
+                System.out.print("*");
+          
+            }
+            System.out.println("");
+        }
+
         System.out.println("");
     }
 }
