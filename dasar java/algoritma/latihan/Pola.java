@@ -42,7 +42,7 @@ public class Pola {
                     segitigaPalindrom();
                     break;
                 case 6:
-                    // butterfly();
+                    butterfly();
                     break;
                 case 7:
                     // paskal();
@@ -229,4 +229,42 @@ public class Pola {
         System.out.println("");
 
     }
+
+    private static void butterfly() {
+        System.out.println("mencetak pola butterfly");
+        System.out.print("Masukan tinggi line: ");
+        int tinggi = input.nextInt();
+
+        System.out.println("");
+            
+            for(int i = tinggi-1; i >= 1; i--) {
+                for(int j = 1; j <= tinggi - i; j++) {
+                    System.out.print(" ");
+        
+                }
+    
+                for(int k = 1; k <= 2 * i -1; k++) {
+                    System.out.print("*");
+              
+                }
+                System.out.println("");
+            }
+
+            for(int i = 1; i <= tinggi; i++) {
+                for(int j = 1; j <= tinggi - i; j++ ) {
+                    System.out.print(" "); 
+                }
+    
+                for(int k = 1; k <= 2 * i -1; k++) {
+                    System.out.print("*");
+                }
+                System.out.println("");
+    
+            }
+        
+        System.out.println("");
+    
+    }
 }
+
+
