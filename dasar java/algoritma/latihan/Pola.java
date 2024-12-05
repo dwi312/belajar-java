@@ -33,7 +33,7 @@ public class Pola {
                     angkaNaik();
                     break;
                 case 3:
-                // piramida terbalik();
+                    piramidTerbalik();
                     break;
                 case 4:
                     // berlianBintang();
@@ -87,7 +87,7 @@ public class Pola {
 
         System.out.println("===== Kumpulan pola Java =====");
         for(int i = 0; i < menu.length; i++) {
-            System.out.println((i+1)+". "+menu[i]);
+            System.out.println((i+1)+". "+ menu[i]);
         }
     }
 
@@ -133,6 +133,31 @@ public class Pola {
         for(int i = 1; i <= tinggi; i++) {
             for(int j = 1; j <= i; j++) {
                 System.out.print(j);
+            }
+            System.out.println("");
+        }
+        System.out.println("");
+    }
+
+    private static void piramidTerbalik() {
+        System.out.println("mencetak pola segitiga siku-siku");
+        System.out.print("Masukan tinggi line: ");
+        int tinggi = input.nextInt();
+
+        System.out.println("");
+        for(int i = 1; i <= tinggi; i++) {
+            for(int j = 1; j < i + 1; j++) {
+                System.out.print(" ");
+                // output:
+                // loop 1 = k(1) < (0+1) = 1 => false => 
+                // loop 2 = k(5) > (5+0) = 1 => false => _ 
+            }
+
+            for(int k = 1; k <= ((tinggi-i)*2)+1; k++) {
+                System.out.print("*");
+                // output:
+                // loop 1 = k(1) < ((5-1)*2)+1 = 9 => true => 123456789
+                // loop 2 = k(1) < ((5-2)*2)+1 = 7 => true => 1234567
             }
             System.out.println("");
         }
